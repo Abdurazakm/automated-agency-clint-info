@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Client Registration</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <nav>
+        <div class="logo">
+            <a href="index.html">EASY CALL</a>
+        </div>
+        <div class="links">
+            <a href="index.html">Home</a>
+            <a href="reports.html">My Status</a>
+            <a href="Admin-login.html">Admin</a>
+            <a href="notifications.html">Notifications</a>
+            <a class="signup-nav" href="signup.html">SignUp</a>
+        </div>
+    </nav>
+    <header>
+        <h1>Register New Client</h1>
+    </header>
+    </nav>
+    <main>
+        <form action="/submit-registration" method="POST">
+            <fieldset>
+                <legend>client Information</legend>      
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required><br>
+
+                <label for="passport">Passport Number:</label>
+                <input type="text" id="passport" name="passport" required><br>
+
+                <label for="contact">Contact Info:</label>
+                <input type="text" id="contact" name="contact" required><br>
+
+                <label for="flight">Flight Date:</label>
+                <input type="date" id="flight" name="flight"><br>
+
+                <label for="biometric">Biometric Date:</label>
+                <input type="date" id="biometric" name="biometric"><br>
+
+                <label for="medical">Medical Checkup Date:</label>
+                <input type="date" id="medical" name="medical"><br>
+
+                <button type="submit">Register Client</button>
+            </fieldset>
+        </form>
+    </main>
+    <footer>
+        <a href="client-list.html">View Clients</a>
+    </footer>
+</body>
+</html>

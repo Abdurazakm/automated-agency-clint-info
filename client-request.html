@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Service Requests</title>
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
+  <body>
+    <nav>
+      <div class="logo">
+          <a href="index.html">EASY CALL</a>
+      </div>
+      <div class="links">
+          <a href="index.html">Home</a>
+          <a href="reports.html">My Status</a>
+          <a href="Admin-login.html">Admin</a>
+          <a href="notifications.html">Notifications</a>
+          <a class="signup-nav" href="signup.html">SignUp</a>
+      </div>
+  </nav>
+    <header>
+      <h1>Service Requests</h1>
+    </header>
+    <main>
+      <form action="/submit-request" method="POST">
+          <label for="serviceType">Service Type:</label>
+          <select id="serviceType" name="serviceType">
+            <option value="medical">Medical Checkup</option>
+            <option value="biometric">Biometric Appointment</option>
+            <option value="flight">Flight Schedule</option>
+          </select><br />
+
+          <label for="details">Service Details:</label>
+          <textarea id="details" name="details" rows="4"></textarea><br />
+
+          <button type="submit">Submit Request</button>
+      </form>
+    </main>
+    <footer>
+      <a href="dashboard.html">Go to Dashboard</a>
+    </footer>
+  </body>
+</html>

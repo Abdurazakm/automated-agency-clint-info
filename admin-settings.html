@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Settings</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <nav>
+        <div class="logo">
+            <a href="index.html">EASY CALL</a>
+        </div>
+        <div class="links">
+            <a href="index.html">Home</a>
+            <a href="reports.html">My Status</a>
+            <a href="Admin-login.html">Admin</a>
+            <a href="notifications.html">Notifications</a>
+            <a class="signup-nav" href="signup.html">SignUp</a>
+        </div>
+    </nav>
+      </nav>
+    <header>
+        <h1>Admin Settings</h1>
+    </header>
+    <main>
+        <form action="/save-settings" method="POST">
+            <label for="messageTemplate">Message Template:</label>
+            <textarea id="messageTemplate" name="messageTemplate" rows="4"></textarea><br>
+
+            <label for="roles">User Roles:</label>
+            <select id="roles" name="roles">
+                <option value="admin">Admin</option>
+                <option value="employee">Employee</option>
+            </select><br>
+
+            <button type="submit">Save Settings</button>
+        </form>
+    </main>
+    <footer>
+        <a href="notifications.html">Go to Notifications</a>
+    </footer>
+</body>
+</html>

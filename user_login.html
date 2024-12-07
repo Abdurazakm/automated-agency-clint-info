@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Login</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <nav>
+    <div class="logo">
+        <a href="index.html">EASY CALL</a>
+    </div>
+  </nav>
+  <header>
+    <h1>Client Login</h1>
+  </header>
+  <main>
+    <form id="login-form">
+      <fieldset>
+        <legend>Client Login</legend>
+      <label for="username">Username:</label>
+      <input type="text" id="username" name="username" required><br>
+      
+      <label for="password">Password:</label>
+      <input type="password" id="password" name="password" required><br>
+      
+      <button type="submit">Login</button>
+    </fieldset>
+    </form>
+  </main>
+  <footer>
+    <p>&copy; 2024 All Rights Reserved.</p>
+  </footer>
+
+  <script>
+    // Simple front-end validation
+    document.getElementById('login-form').addEventListener('submit', function(e) {
+      e.preventDefault();
+      const username = document.getElementById('username').value;
+      const password = document.getElementById('password').value;
+
+      // Replace with real validation logic
+      if (username === "admin" && password === "12345") {
+        // alert("Login successful!");
+        window.location.href = "reports.html"; // Redirect to admin dashboard
+      } else {
+        alert("Invalid credentials. Please try again.");
+      }
+    });
+  </script>
+</body>
+</html>
