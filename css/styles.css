@@ -1,13 +1,29 @@
 /* General Styles */
-/* For footer to stay at the bottom */
 html, body {
     height: 100%; /* Ensure full height of the viewport */
     display: flex;
     flex-direction: column; /* Stack elements vertically */
+    overflow-x: hidden; /* Prevent horizontal scrolling */
 }
 
 main {
     flex: 1; /* Allow main content to grow and push footer down */
+}
+main h2 {
+    /* font-size: 2.5rem; */
+    margin-bottom: 10px;
+    margin-left: 20px;
+}
+
+main p {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+    margin-left: 20px;
+}
+main form {
+    margin-left: 20px;
+    margin-bottom: 20px;
+
 }
 
 footer {
@@ -33,6 +49,11 @@ body {
     background-color: #eaf6f6;
 }
 
+img, video {
+    max-width: 100%; /* Ensure media scales */
+    height: auto;
+}
+
 a {
     text-decoration: none;
     color: #333;
@@ -48,16 +69,17 @@ nav {
     color: black;
     display: flex;
     justify-content: flex-start; /* Align items to the left */
-    padding: 10px 50px; /* Add padding for spacing from the edges */
+    padding: 10px 20px;
     z-index: 1000;
+    flex-wrap: wrap; /* Allow wrapping for small screens */
 }
 
 .links {
     margin-left: auto; /* Push links to the far right */
     display: flex;
-    gap: 20px; /* Adjust spacing between links */
+    flex-wrap: wrap;
+    gap: 10px;
 }
-
 
 nav a {
     color: black; /* Ensure links are black */
@@ -66,7 +88,9 @@ nav a {
 }
 
 nav a:hover {
-    background-color: #f0f0f0; /* Slight gray background on hover */
+    background-color: #dfdcdc; /* Slight gray background on hover */
+    border-radius: 15%;
+    color: #555;
 }
 
 .logo {
@@ -74,16 +98,11 @@ nav a:hover {
     font-weight: bold;
 }
 
-.links a {
-    margin: 0 10px;
-    font-size: 1rem;
-}
-
 /* Header */
 header {
-    /* text-align: center; */
     padding: 50px;
     background-color: #eaf7ff;
+    margin-top: calc(60px + 30px); /* 60px for navbar + 30px extra space */
 }
 
 header h1 {
@@ -96,14 +115,23 @@ header p {
     margin-bottom: 20px;
 }
 
+
+    
 .login-button a {
     display: inline-block;
     padding: 10px 20px;
-    background-color: #007bff;
+    background-color: #00060c;
     color: white;
-    border-radius: 5px;
+    border-radius: 15%;
     font-size: 1rem;
 }
+.login-button a:hover{
+    background-color: white;
+    color: #00060c;
+}
+
+
+
 
 /* Image Section */
 .image-section {
@@ -123,10 +151,13 @@ header p {
     justify-content: space-around;
     padding: 20px;
     background-color: #f9f9f9;
+    flex-wrap: wrap; /* Allow wrapping for small screens */
+    gap: 20px;
 }
 
 .card {
     width: 30%;
+    max-width: 300px; /* Limit width for larger screens */
     background-color: #fff;
     border: 1px solid #ddd;
     border-radius: 10px;
@@ -161,6 +192,7 @@ header p {
     justify-content: space-around;
     padding: 20px;
     background-color: #fff;
+    flex-wrap: wrap; /* Allow wrapping for small screens */
 }
 
 .contactinfo .section {
@@ -195,8 +227,8 @@ footer {
 
 /* Signup Page */
 .signup-container {
-    width: 500px;
-    background-color: white;
+    width: 90%; /* Flexible width for responsiveness */
+    max-width: 500px; /* Maximum width for larger screens */
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -205,14 +237,25 @@ footer {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin: auto;
-    margin-top: 30px;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    z-index: 10;
+    margin: 0 auto; /* Center it horizontally */
+    margin-top: 100px; /* Ensure there's space from the top */
+    position: relative; /* Removed `absolute` to avoid overlap issues */
 }
+
+@media (max-width: 768px) {
+    .signup-container {
+        margin-top: 120px; /* Extra space for smaller screens */
+        padding: 15px; /* Adjust padding for smaller viewports */
+    }
+}
+
+@media (max-width: 480px) {
+    .signup-container {
+        margin-top: 140px; /* More space for very small screens */
+        padding: 10px; /* Compact padding */
+    }
+}
+
 
 .signup-container h2 {
     text-align: center;
@@ -274,15 +317,18 @@ footer {
     text-decoration: underline;
 }
 
+/* Dashboard Section */
 .dashboard-container {
     display: flex;
     flex-direction: row;
     justify-content: space-around;
     align-items: center;
     height: calc(100vh - 60px); /* Full height minus navigation bar height */
-  }
+    flex-wrap: wrap; /* Add wrap for smaller screens */
+    gap: 10px;
+}
 
-  .section-admin {
+.section-admin {
     flex: 1; /* Equal width for all sections */
     margin: 5px;
     padding: 20px;
@@ -291,30 +337,148 @@ footer {
     text-align: center;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     height: 300px;
-  }
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
 
-  .section-admin a {
+.section-admin a {
     background-color: #007BFF;
     color: white;
     padding: 10px 20px;
     text-decoration: none;
     border-radius: 5px;
-  }
+}
 
-  .section-admin a:hover {
+.section-admin a:hover {
     background-color: #0056b3;
-  }
+}
 
-  /* .section a:hover {
-    background-color: #0056b3;
-  } */
-  .section-admin:hover {
+.section-admin:hover {
     transform: translateY(-5px);
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
 }
-  .signup-nav{
+
+.signup-nav {
     padding: 8px;
     background-color: black;
     color: #fff;
     border-radius: 15%;
-  }
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 768px) {
+    .card-section, .dashboard-container {
+        flex-direction: column; /* Stack vertically */
+        gap: 20px;
+    }
+
+    .card, .section-admin {
+        width: 90%; /* Full width for small screens */
+        height: auto; /* Remove fixed height */
+    }
+
+    .signup-container {
+        padding: 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    header h1 {
+        font-size: 1.8rem; /* Adjusted font size */
+    }
+
+    header p {
+        font-size: 1rem;
+    }
+
+    footer {
+        font-size: 0.9rem; /* Smaller footer text */
+    }
+}
+
+/* #login-form */
+#login-form {
+    width: 100%;
+    max-width: 400px;
+    /* background-color: white; */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-top: 20px;
+}
+
+fieldset {
+    border: none;
+    padding: 0;
+}
+
+legend {
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+    text-align: center;
+    color: #007bff;
+}
+
+label {
+    font-size: 1rem;
+    color: #555;
+    margin-bottom: 8px;
+    display: block;
+}
+
+input[type="text"],
+input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    font-size: 1rem;
+}
+
+button {
+    padding: 10px;
+    width: 100%;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    nav {
+        padding: 10px 0;
+    }
+
+    header h1 {
+        font-size: 1.8rem;
+    }
+
+    #login-form {
+        width: 90%;
+        max-width: 380px;
+        padding: 15px;
+    }
+}
+
+@media (max-width: 480px) {
+    header h1 {
+        font-size: 1.5rem;
+    }
+
+    #login-form {
+        width: 90%;
+        max-width: 350px;
+        padding: 10px;
+    }
+
+    button {
+        font-size: 0.9rem;
+    }
+}
